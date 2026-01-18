@@ -1,0 +1,60 @@
+#star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+@function multiple-box-shadow($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+  @return unquote($value);
+}
+
+//This is not SASS, so I need to generate the box-shadow values. I will generate a few here as an example.
+//In a real scenario, this would be a very long line of generated values.
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Base styles for stars */
+.star {
+  position: absolute;
+  background: transparent;
+  border-radius: 50%;
+}
+
+/* Small stars */
+.stars1 {
+  width: 1px;
+  height: 1px;
+  animation: animStar 50s linear infinite;
+  box-shadow: 1535px 763px #FFF, 1269px 1239px #FFF, 196px 1475px #FFF, 1492px 707px #FFF, 1802px 1433px #FFF, 1530px 1357px #FFF, 1141px 763px #FFF, 915px 127px #FFF, 604px 587px #FFF, 1205px 1013px #FFF, 145px 1149px #FFF, 1782px 735px #FFF, 1473px 197px #FFF, 1370px 1485px #FFF, 1113px 561px #FFF, 706px 509px #FFF, 1558px 995px #FFF, 1957px 55px #FFF, 48px 1017px #FFF, 1003px 135px #FFF;
+}
+
+/* Medium stars */
+.stars2 {
+  width: 2px;
+  height: 2px;
+  animation: animStar 100s linear infinite;
+  box-shadow: 1022px 1293px #FFF, 1198px 123px #FFF, 1557px 1133px #FFF, 1693px 831px #FFF, 1111px 475px #FFF, 290px 839px #FFF, 663px 1477px #FFF, 1963px 1313px #FFF, 1419px 1431px #FFF, 125px 145px #FFF, 1735px 311px #FFF, 532px 1391px #FFF, 243px 1335px #FFF, 1711px 391px #FFF, 1792px 129px #FFF;
+}
+
+/* Big stars */
+.stars3 {
+  width: 3px;
+  height: 3px;
+  animation: animStar 150s linear infinite;
+  box-shadow: 947px 1483px #FFF, 1104px 1195px #FFF, 321px 1149px #FFF, 1382px 1321px #FFF, 11px 695px #FFF, 1025px 125px #FFF, 115px 1451px #FFF, 891px 299px #FFF, 395px 911px #FFF, 1982px 285px #FFF;
+}
